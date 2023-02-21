@@ -1,0 +1,116 @@
+query getPackageDetails(
+  $id: PackagesPackageID!
+  $first: Int
+  $last: Int
+  $after: String
+  $before: String
+) {
+  package(id: $id) {
+    id
+    name
+    packageType
+    version
+    lastDownloadedAt
+    createdAt
+    updatedAt
+    status
+    canDestroy
+    npmUrl
+    mavenUrl
+    conanUrl
+    nugetUrl
+    pypiUrl
+    pypiSetupUrl
+    composerUrl
+    composerConfigRepositoryUrl
+    project {
+      id
+      path
+      name
+      fullPath
+    }
+    tags(first: 10) {
+      nodes {
+        id
+        name
+      }
+    }
+    pipelines(first: 1) {
+      nodes {
+        ref
+        id
+        project {
+          id
+          name
+          webUrl
+        }
+      }
+    }
+    packageFiles(first: 100) {
+      pageInfo {
+        hasNextPage
+      }
+      nodes {
+        id
+        fileMd5
+        fileName
+        fileSha1
+        fileSha256
+        size
+        createdAt
+        downloadPath
+      }
+    }
+    versions(after: $after, before: $before, first: $first, last: $last) {
+      count
+      nodes {
+        id
+        name
+        createdAt
+        version
+        status
+        tags(first: 1) {
+          nodes {
+            id
+            name
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        endCursor
+        startCursor
+      }
+    }
+    dependencyLinks {
+      nodes {
+        id
+        dependency {
+          id
+          name
+          versionPattern
+        }
+        dependencyType
+        metadata {
+          ... on NugetDependencyLinkMetadata {
+            id
+            targetFramework
+          }
+        }
+      }
+    }
+    metadata {
+      ... on MavenMetadata {
+        id
+        appName
+        appGroup
+        appVersion
+      }
+      ... on NugetMetadata {
+        id
+        iconUrl
+      }
+    }
+  }
+}

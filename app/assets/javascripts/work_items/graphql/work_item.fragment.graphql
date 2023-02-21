@@ -1,0 +1,29 @@
+#import "ee_else_ce/work_items/graphql/work_item_widgets.fragment.graphql"
+
+fragment WorkItem on WorkItem {
+  id
+  iid
+  title
+  state
+  description
+  confidential
+  createdAt
+  closedAt
+  project {
+    id
+    fullPath
+    archived
+  }
+  workItemType {
+    id
+    name
+    iconName
+  }
+  userPermissions {
+    deleteWorkItem
+    updateWorkItem
+  }
+  widgets {
+    ...WorkItemWidgets
+  }
+}

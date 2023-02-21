@@ -1,0 +1,162 @@
+{
+  "AlertManagementIntegration": [
+    "AlertManagementHttpIntegration",
+    "AlertManagementPrometheusIntegration"
+  ],
+  "CiVariable": [
+    "CiGroupVariable",
+    "CiInstanceVariable",
+    "CiManualVariable",
+    "CiProjectVariable",
+    "PipelineScheduleVariable"
+  ],
+  "CommitSignature": [
+    "GpgSignature",
+    "SshSignature",
+    "X509Signature"
+  ],
+  "CurrentUserTodos": [
+    "BoardEpic",
+    "Design",
+    "Epic",
+    "EpicIssue",
+    "Issue",
+    "MergeRequest"
+  ],
+  "DependencyLinkMetadata": [
+    "NugetDependencyLinkMetadata"
+  ],
+  "DesignFields": [
+    "Design",
+    "DesignAtVersion"
+  ],
+  "Entry": [
+    "Blob",
+    "Submodule",
+    "TreeEntry"
+  ],
+  "Eventable": [
+    "BoardEpic",
+    "Epic"
+  ],
+  "Issuable": [
+    "Epic",
+    "Issue",
+    "MergeRequest",
+    "WorkItem"
+  ],
+  "JobNeedUnion": [
+    "CiBuildNeed",
+    "CiJob"
+  ],
+  "MemberInterface": [
+    "GroupMember",
+    "ProjectMember"
+  ],
+  "NoteableInterface": [
+    "AlertManagementAlert",
+    "BoardEpic",
+    "Design",
+    "Epic",
+    "EpicIssue",
+    "Issue",
+    "MergeRequest",
+    "Snippet",
+    "Vulnerability"
+  ],
+  "NoteableType": [
+    "Design",
+    "Issue",
+    "MergeRequest"
+  ],
+  "OrchestrationPolicy": [
+    "ScanExecutionPolicy",
+    "ScanResultPolicy"
+  ],
+  "PackageFileMetadata": [
+    "ConanFileMetadata",
+    "HelmFileMetadata"
+  ],
+  "PackageMetadata": [
+    "ComposerMetadata",
+    "ConanMetadata",
+    "MavenMetadata",
+    "NugetMetadata",
+    "PypiMetadata"
+  ],
+  "ResolvableInterface": [
+    "Discussion",
+    "Note"
+  ],
+  "SecurityPolicySource": [
+    "GroupSecurityPolicySource",
+    "ProjectSecurityPolicySource"
+  ],
+  "Service": [
+    "BaseService",
+    "JiraService"
+  ],
+  "TimeboxReportInterface": [
+    "Iteration",
+    "Milestone"
+  ],
+  "Todoable": [
+    "AlertManagementAlert",
+    "BoardEpic",
+    "Commit",
+    "Design",
+    "Epic",
+    "EpicIssue",
+    "Issue",
+    "MergeRequest",
+    "WorkItem"
+  ],
+  "User": [
+    "MergeRequestAssignee",
+    "MergeRequestAuthor",
+    "MergeRequestParticipant",
+    "MergeRequestReviewer",
+    "UserCore"
+  ],
+  "VulnerabilityDetail": [
+    "VulnerabilityDetailBase",
+    "VulnerabilityDetailBoolean",
+    "VulnerabilityDetailCode",
+    "VulnerabilityDetailCommit",
+    "VulnerabilityDetailDiff",
+    "VulnerabilityDetailFileLocation",
+    "VulnerabilityDetailInt",
+    "VulnerabilityDetailList",
+    "VulnerabilityDetailMarkdown",
+    "VulnerabilityDetailModuleLocation",
+    "VulnerabilityDetailTable",
+    "VulnerabilityDetailText",
+    "VulnerabilityDetailUrl"
+  ],
+  "VulnerabilityLocation": [
+    "VulnerabilityLocationClusterImageScanning",
+    "VulnerabilityLocationContainerScanning",
+    "VulnerabilityLocationCoverageFuzzing",
+    "VulnerabilityLocationDast",
+    "VulnerabilityLocationDependencyScanning",
+    "VulnerabilityLocationGeneric",
+    "VulnerabilityLocationSast",
+    "VulnerabilityLocationSecretDetection"
+  ],
+  "WorkItemWidget": [
+    "WorkItemWidgetAssignees",
+    "WorkItemWidgetDescription",
+    "WorkItemWidgetHealthStatus",
+    "WorkItemWidgetHierarchy",
+    "WorkItemWidgetIteration",
+    "WorkItemWidgetLabels",
+    "WorkItemWidgetMilestone",
+    "WorkItemWidgetNotes",
+    "WorkItemWidgetProgress",
+    "WorkItemWidgetRequirementLegacy",
+    "WorkItemWidgetStartAndDueDate",
+    "WorkItemWidgetStatus",
+    "WorkItemWidgetTestReports",
+    "WorkItemWidgetWeight"
+  ]
+}

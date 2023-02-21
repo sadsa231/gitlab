@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "required": [
+    "description",
+    "severity",
+    "file_path",
+    "line"
+  ],
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "file_path": {
+      "type": "string"
+    },
+    "line": {
+      "type": "integer"
+    },
+    "web_url": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

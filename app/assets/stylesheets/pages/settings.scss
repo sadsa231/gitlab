@@ -1,0 +1,116 @@
+.integration-settings-form {
+  .card.card-body,
+  .info-well {
+    padding: $gl-padding / 2;
+    box-shadow: none;
+  }
+
+  .svg-container {
+    max-width: 150px;
+  }
+}
+
+.visibility-level-setting {
+  .option-title {
+    font-weight: $gl-font-weight-normal;
+    display: inline-block;
+    color: var(--gl-text-color, $gl-text-color);
+    vertical-align: top;
+  }
+
+  .option-description,
+  .option-disabled-reason {
+    color: var(--gray-700, $gray-700);
+  }
+
+  .option-disabled-reason {
+    display: none;
+  }
+
+  .disabled {
+    svg {
+      opacity: 0.5;
+    }
+
+    .option-description {
+      display: none;
+    }
+
+    .option-disabled-reason {
+      display: block;
+    }
+  }
+}
+
+.saml-settings.info-well {
+  .form-control[readonly] {
+    background: var(--white, $white);
+  }
+}
+
+.doorkeeper-authorize {
+  max-width: px-to-rem(500px);
+}
+
+.created-deploy-token-container {
+  .deploy-token-field {
+    width: 90%;
+    display: inline;
+  }
+
+  .btn-clipboard {
+    background-color: var(--white, $white);
+    border: 1px solid var(--gray-100, $gray-100);
+  }
+
+  .deploy-token-help-block {
+    display: block;
+    margin-bottom: 0;
+  }
+}
+
+.push-pull-table {
+  margin-top: 1em;
+}
+
+.ci-variable-table,
+.deploy-freeze-table,
+.ci-secure-files-table {
+  table {
+    thead {
+      border-bottom: 1px solid var(--gray-50, $gray-50);
+    }
+
+    tr {
+      td,
+      th {
+        padding-left: 0;
+      }
+
+      th {
+        background-color: transparent;
+        font-weight: $gl-font-weight-bold;
+        border: 0;
+      }
+
+      // When tables are "stacked", restore td padding
+      @media(max-width: map-get($grid-breakpoints, lg)) {
+        td {
+          padding-left: $gl-spacing-scale-5;
+        }
+      }
+    }
+  }
+
+  @media(max-width: map-get($grid-breakpoints, lg)-1) {
+    .truncated-container {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.gl-md-flex-wrap-nowrap.gl-md-flex-wrap-nowrap {
+  @include gl-media-breakpoint-up(md) {
+    @include gl-flex-wrap-nowrap;
+  }
+}

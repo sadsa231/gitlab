@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DastProfileSummaryCell renders properly 1`] = `
+<div
+  class="row gl-my-2"
+>
+  <div
+    class="col-md-5 gl-pr-0!"
+  >
+    Row Label:
+  </div>
+   
+  <div
+    class="col-md-7"
+  >
+    <strong>
+      Row Value
+    </strong>
+  </div>
+</div>
+`;

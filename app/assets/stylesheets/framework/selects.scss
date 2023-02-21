@@ -1,0 +1,50 @@
+.group-result {
+  .group-image {
+    float: left;
+  }
+
+  .group-name {
+    font-weight: $gl-font-weight-bold;
+  }
+
+  .group-path {
+    color: $gray-300;
+  }
+}
+
+.project-result {
+  .project-name {
+    font-weight: $gl-font-weight-bold;
+  }
+
+  .project-path {
+    color: $gray-300;
+  }
+}
+
+.user-result {
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+
+  .user-image {
+    float: left;
+  }
+
+  &.no-username {
+    .user-name {
+      line-height: 24px;
+    }
+  }
+}
+
+.approvers-select {
+  .dropdown-menu {
+    @include gl-w-full;
+    @include gl-max-w-none;
+  }
+
+  .gl-dropdown-item-check-icon {
+    @include gl-display-none;
+  }
+}

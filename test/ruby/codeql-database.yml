@@ -1,0 +1,34 @@
+---
+sourceLocationPrefix: "/pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/0/root"
+baselineLinesOfCode: 1924487
+unicodeNewlines: false
+columnKind: "utf8"
+primaryLanguage: "ruby"
+inProgress:
+  primaryLanguage: "ruby"
+  installedExtractors:
+    go:
+    - "file:///pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/codeql/go/"
+    python:
+    - "file:///pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/codeql/python/"
+    java:
+    - "file:///pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/codeql/java/"
+    xml:
+    - "file:///pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/codeql/xml/"
+    csv:
+    - "file:///pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/codeql/csv/"
+    cpp:
+    - "file:///pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/codeql/cpp/"
+    csharp:
+    - "file:///pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/codeql/csharp/"
+    properties:
+    - "file:///pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/codeql/properties/"
+    html:
+    - "file:///pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/codeql/html/"
+    javascript:
+    - "file:///pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/codeql/javascript/"
+    ruby:
+    - "file:///pdata/dev/bb/projs/cdavaf_workdir/predefined/static_scan_prj/gitlab-root/storage/codeql/ruby/"
+creationMetadata:
+  cliVersion: "2.12.1"
+  creationTime: "2023-02-06T19:03:31.938324515Z"

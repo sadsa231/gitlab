@@ -1,0 +1,15 @@
+.protected-branches-list.js-protected-environments-list
+  - unless @protected_environments.empty?
+    .flash-container
+    %table.table.table-bordered
+      %colgroup
+        %col{ width: '30%' }
+        %col
+        %col{ width: '10%' }
+      %thead
+        %tr
+          %th= s_('ProtectedEnvironment|Protected Environment (%{protected_environments_count})') % { protected_environments_count: limited_counter_with_delimiter(@protected_environments) }
+          %th= s_('ProtectedEnvironment|Allowed to deploy')
+          %th
+      %tbody
+        = render partial: 'groups/protected_environments/protected_environment', collection: @protected_environments

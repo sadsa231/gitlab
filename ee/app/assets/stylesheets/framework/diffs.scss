@@ -1,0 +1,110 @@
+@import 'framework/variables';
+// Merge request diff grid layout modifications for inline code quality diff
+// These grid templates build off of their equivalents in app/.../diffs.scss
+// to expand the column only when the .with-codequality class is applied
+.diff-grid.with-codequality {
+  .diff-grid-right {
+    grid-template-columns: 50px 8px 20px 1fr;
+  }
+
+  .codequality-findings-list {
+    margin-left: 50%;
+
+    li {
+      border-left: 0;
+    }
+  }
+
+  &.inline-diff-view {
+    .codequality-findings-list {
+      margin-left: 6.2rem;
+    }
+
+    .diff-grid-left {
+      grid-template-columns: 50px 50px 8px 20px 1fr;
+    }
+  }
+
+  .more-count {
+    @include avatar-counter(50%);
+    width: $default-icon-size;
+    height: $default-icon-size;
+  }
+
+  .code-quality-transition-container .codequality-severity-icon {
+    @for $i from 1 through 4 {
+      $z-index: 100;
+      $x-pos: 10px;
+      &:nth-child(#{$i}) {
+        // moving children behind first element
+        z-index: $z-index + $i * -1;
+        transform: translateX((($i * $x-pos)));
+      }
+    }
+  }
+
+  .more-count,
+  .codequality-severity-icon {
+    filter: drop-shadow(0 1px 0.5px #fff) drop-shadow(1px 0 0.5px #fff) drop-shadow(0 -1px 0.5px #fff) drop-shadow(-1px 0 0.5px #fff);
+  }
+
+  .more-count-copy {
+    line-height: $code-line-height;
+  }
+
+
+  .code-quality-transition-container {
+    .more-count-enter,
+    .more-count-leave-to {
+      &.more-count {
+        opacity: 0;
+        transform: translateX(0);
+      }
+    }
+
+    .more-count {
+      // Each icon is 10px per $x-pos above, we currently only ever show 3 additional icons
+      // See `codequalityCountThreshold` in  `code_quality_gutter-icon.vue`
+      transform: translateX(30px);
+      z-index: 3;
+      transition: opacity 0.1s, transform 0.2s;
+    }
+
+    .more-count-enter-to,
+    .more-count-leave {
+      &.more-count {
+        // Each icon is 10px per $x-pos above, we currently only ever show 3 additional icons
+        // See `codequalityCountThreshold` in  `code_quality_gutter-icon.vue`
+        transform: translateX(30px);
+      }
+    }
+
+    .icons-enter,
+    .icons-leave-to {
+      &.codequality-severity-icon {
+        opacity: 0;
+        transform: translateX(0);
+      }
+    }
+
+    .codequality-severity-icon {
+      transition: opacity 0.1s, transform 0.2s;
+    }
+
+    .icons-enter-to,
+    .icons-leave {
+      &.codequality-severity-icon {
+        @for $i from 1 through 4 {
+          $x-pos: 10px;
+          &:nth-child(#{$i}) {
+            transform: translateX((($i * $x-pos)));
+          }
+        }
+      }
+    }
+  }
+
+  .severity-copy {
+    text-transform: capitalize;
+  }
+}

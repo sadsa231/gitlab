@@ -1,0 +1,18 @@
+{
+  "internalDashboards": [
+    {
+      "id": "dashboard_audience",
+      "title": "Audience",
+      "description": "Understand your audience",
+      "icon": "users",
+      "labels": [
+        "Audience"
+      ]
+    },
+    {
+      "id": "dashboard_behavior",
+      "title": "Behavior",
+      "description": "All insights on user activity"
+    }
+  ]
+}

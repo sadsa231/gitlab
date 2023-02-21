@@ -1,0 +1,21 @@
+- expanded = expanded_by_default?
+
+- if @group.licensed_feature_available?(:protected_environments)
+  %section.protected-environments-settings.settings.no-animate#js-protected-environments-settings{ class: ('expanded' if expanded) }
+    .settings-header
+      %h4.settings-title.js-settings-toggle.js-settings-toggle-trigger-only
+        = _('Protected environments')
+      %button.btn.gl-button.btn-default.js-settings-toggle{ type: 'button' }
+        = expanded ? _('Collapse') : _('Expand')
+      %p
+        = s_('ProtectedEnvironment|Only specified groups can execute deployments in protected environments.')
+    .settings-content
+      - if @protected_environments.empty?
+        = render Pajamas::AlertComponent.new(variant: :warning, show_icon: false, dismissible: false,
+          alert_options: { class: 'gl-mb-5'}) do |c|
+          = c.body do
+            = s_('ProtectedEnvironment|There are currently no protected environments. Protect an environment with this form.')
+
+      = render 'groups/protected_environments/form'
+    .settings-content
+      = render partial: 'groups/protected_environments/environments_list'

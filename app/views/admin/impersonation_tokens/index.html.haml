@@ -1,0 +1,23 @@
+- add_to_breadcrumbs _('Users'), admin_users_path
+- breadcrumb_title @user.name
+- page_title _('Impersonation Tokens'), @user.name, _('Users')
+- type = _('impersonation token')
+- type_plural = _('impersonation tokens')
+
+= render 'admin/users/head'
+
+.row.gl-mt-3
+  .col-lg-12
+    #js-new-access-token-app{ data: { access_token_type: type } }
+
+    = render 'shared/access_tokens/form',
+        ajax: true,
+        type: type,
+        title: _('Add an impersonation token'),
+        path: admin_user_impersonation_tokens_path,
+        impersonation: true,
+        token: @impersonation_token,
+        scopes: @scopes,
+        help_path: help_page_path('api/rest/index', anchor: 'impersonation-tokens')
+
+    #js-access-token-table-app{ data: { access_token_type: type, access_token_type_plural: type_plural, initial_active_access_tokens: @active_impersonation_tokens.to_json, information: _("To see all the user's personal access tokens you must impersonate them first.") } }

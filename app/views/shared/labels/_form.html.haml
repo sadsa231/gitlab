@@ -1,0 +1,38 @@
+= gitlab_ui_form_for @label, as: :label, url: url, html: { class: 'label-form js-quick-submit js-requires-input' } do |f|
+  = form_errors(@label)
+
+  .form-group.row
+    .col-12
+      = f.label :title
+      = f.text_field :title, class: "gl-form-input form-control js-label-title", required: true, autofocus: true, data: { qa_selector: 'label_title_field' }
+    = render_if_exists 'shared/labels/create_label_help_text'
+
+  .form-group.row
+    .col-12
+      = f.label :description
+      = f.text_field :description, class: "gl-form-input form-control js-quick-submit", data: { qa_selector: 'label_description_field' }
+  .form-group.row
+    .col-12
+      = f.label :color, _("Background color")
+      .input-group
+        .input-group-prepend
+          .input-group-text.label-color-preview &nbsp;
+        = f.text_field :color, class: "gl-form-input form-control", data: { qa_selector: 'label_color_field' }
+      .form-text.text-muted
+        = _('Choose any color.')
+        %br
+        = _("Or you can choose one of the suggested colors below")
+      = render_suggested_colors
+  .gl-display-flex.gl-justify-content-space-between
+    %div
+      - if @label.persisted?
+        = f.submit _('Save changes'), class: 'js-save-button gl-mr-2', pajamas_button: true
+      - else
+        = f.submit _('Create label'), class: 'js-save-button gl-mr-2', data: { qa_selector: 'label_create_button' }, pajamas_button: true
+      = render Pajamas::ButtonComponent.new(href: back_path) do
+        = _('Cancel')
+
+    - if @label.persisted?
+      - presented_label = @label.present
+      = render Pajamas::ButtonComponent.new(variant: :danger, category: :secondary, button_options: { class: 'js-delete-label-modal-button', data: { label_name: presented_label.name, subject_name: presented_label.subject_name, destroy_path: presented_label.destroy_path } }) do
+        = _('Delete')

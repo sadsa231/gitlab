@@ -1,0 +1,24 @@
+#import "~/graphql_shared/fragments/user.fragment.graphql"
+
+fragment WorkItemNote on Note {
+  id
+  bodyHtml
+  system
+  internal
+  systemNoteIconName
+  createdAt
+  discussion {
+    id
+  }
+  author {
+    ...User
+  }
+  userPermissions {
+    adminNote
+    awardEmoji
+    readNote
+    createNote
+    resolveNote
+    repositionNote
+  }
+}
